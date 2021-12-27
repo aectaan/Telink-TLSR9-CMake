@@ -1,0 +1,26 @@
+
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/app/**",
+                "${workspaceFolder}/driver_sdk/**"                
+            ],
+            "defines": [
+                "MCU_STARTUP_FLASH_B91=1",
+                "DEBUG"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}

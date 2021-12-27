@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "type": "gdb",
+            "name": "Native Debug",
+            "request": "attach",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "parseText",
+            "executable": "${workspaceRoot}/app/build/apptest.elf",
+            "preLaunchTask": "ICEman",
+            "target": ":1111",
+            "remote": true,
+            "gdbpath": "${workspaceRoot}/toolchain/nds32le-elf-mculib-v5f/bin/riscv32-elf-gdb",
+            "autorun": [
+                "reset-and-hold",
+				"flushregs",
+                "break main"
+            ]
+        },
+        {
+            "name": "Cortex-Debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "./app/build/apptest.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "external",
+            "gdbTarget": "localhost:1111",
+            "gdbPath": "${workspaceRoot}/toolchain/nds32le-elf-mculib-v5f/bin/riscv32-elf-gdb",
+            "preLaunchTask": "ICEman",
+            "runToEntryPoint": "main",
+        }
+    ]
+}

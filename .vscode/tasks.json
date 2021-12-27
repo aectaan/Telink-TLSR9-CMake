@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "cmake -Bbuild && cd build && make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceRoot}/app/"
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceFolder}/build"],
+                "pattern": {
+                  "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                  "file": 1,
+                  "line": 2,
+                  "column": 3,
+                  "severity": 4,
+                  "message": 5
+                }
+            }
+        },
+        {
+            "label": "ICEman",
+            "type": "shell",
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceRoot}/toolchain/ice"
+            },
+            "command": "./ICEman -Z v5",
+        },
+        {
+            "label": "flash",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceRoot}/toolchain/flash/bin"
+            },
+            "command": "./SPI_burn -i ./../../../app/build/apptest.bin -v",
+            "dependsOn":["Build"],
+        }
+    ]
+}

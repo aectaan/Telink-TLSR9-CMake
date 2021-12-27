@@ -1,0 +1,9 @@
+{
+    "cortex-debug.openocdPath": "${workspaceRoot}/toolchain/ice/openocd",
+    "cortex-debug.gdbPath": "${workspaceRoot}/toolchain/nds32le-elf-mculib-v5f/nds32le-elf-mculib-v5f/bin/riscv32-elf-gdb",
+    "cmake.sourceDirectory": "${workspaceFolder}/app",
+    "taskExplorer.enableMake": false,
+    "search.exclude": {
+        "**/build": true
+      }
+}
