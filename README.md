@@ -48,7 +48,11 @@ Draw the rest of fckng owl:
 ```
 ./build_elf_toolchain.sh
 ```
-
+### Ncurses
+Also you will need ncurses library
+```
+sudo apt install libncurses5 libncurses5:i386
+```
 ### Get debug and flashing tool
 ```
 wget https://github.com/andestech/Andes-Development-Kit/releases/download/ast-v3_2_3-release-linux/flash.zip
